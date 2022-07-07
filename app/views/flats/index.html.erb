@@ -1,0 +1,25 @@
+<div class="grid-container">
+  <div class="d-flex top-bar">
+    <h1 class ="title">All our flats</h1>
+    <button type="button" class="my-btn btn btn-primary"><%= link_to "New Flat", new_flat_path %></button>
+  </div>
+  <% @flats.each do |flat| %>
+    <%= link_to flat_path(flat) do %>
+      <div class ="card-container">
+        <div class="card-trip">
+        <img src="https://source.unsplash.com/random/?airbnb" />
+        <div class="card-trip-infos">
+            <div>
+              <h2><%= link_to flat.name, flat_path(flat) %> | <span class="icon"><%= flat.number_of_guests %> <i class="fa-solid fa-user"></i></span></h2>
+              <p><%= flat.address%></p> <%= link_to edit_flat_path(flat) do %>
+              <i class="fas fa-edit"></i><% end %>
+              <%= link_to flat_path(flat.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+                <i class="fa-solid fa-trash-can"></i>
+              <% end %>
+            </div>
+          <h2><%= flat.price_per_night %><i class="fa-solid fa-yen-sign"></i></h2>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

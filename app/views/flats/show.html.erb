@@ -1,0 +1,35 @@
+<div class= "container">
+  <img class= "map" src="https://realestate-resources.scdn2.secure.raxcdn.com/wp-content/uploads/2018/07/Japanese-Language-Schools-Near-Shinjuku-2.png)">
+      <div class="flat-contents d-flex">
+        <div class ="details-card-container">
+          <div class ="details-card lg">
+            <h1><%= @flat.name %></h1>
+            <h2><%= @flat.address %></h2>
+          </div>
+          <div class ="details-card lg">
+            <h1>A bit more about this flat</h1>
+            <p><%= @flat.description %></p>
+          </div>
+          <div class ="details-card lg">
+            <h1>Details</h1>
+            <p><span class="icon"><%= @flat.number_of_guests %> <i class="fa-solid fa-user"></i></span> | <%= @flat.price_per_night %><i class="fa-solid fa-yen-sign"></i></p>
+          </div>
+        </div>
+        <div class="booking-card-container">
+          <div class ="details-card mini">
+            <h2>Book this place!</h2>
+            <form class="booking-form">
+              <label for="chk-in">Check-in:</label><br>
+              <input type="date" id="chk-in" name="check-in"/><br>
+              <label for="chk-out">Check-out:</label><br>
+              <input type="date" id="chk-out" name="chk-out"/> <br><br>
+              <input type="submit" value="Submit">
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="back-link">
+        <div class="btn btn-primary"><%= link_to 'Back', flats_path %></div>
+      </div>
+
+</div>
